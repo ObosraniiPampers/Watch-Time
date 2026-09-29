@@ -73,5 +73,5 @@ def AtThatMoment(action, *args, **kwargs):
             print(action(*args, **kwargs))
             sleep(1)
         except KeyboardInterrupt:
-            print("\nПоток выполнения остановлен!")
+            print("\nThe execution thread has been stopped!")
             break
