@@ -1,6 +1,6 @@
 # WatchTime
 
-A Python library for working with time in digital clock format (HH:MM) with built-in timezone features and an automatic live viewer.
+A Python library for working with time in digital clock format (HH:MM), managing calendar dates, handling built-in timezone features, and displaying automatic live updates.
 
 ## Features
 
@@ -48,9 +48,9 @@ from watchtime import RealTimeWatchTime, TimeZone, AtThatMoment
 local_time = RealTimeWatchTime(hour=2)
 print(f"Local adjusted time: {local_time}")
 
-# Get time in a specific timezone (e.g., MSK / -2 hours from YEKT)
-msk_time = TimeZone(-2)
-print(f"Moscow time: {msk_time}")
+# Get time in a specific timezone
+cet_time = TimeZone(1)
+print(f"Central european time: {cet_time}")
 ```
 
 ### Launching Live Clock
@@ -62,6 +62,27 @@ from watchtime import AtThatMoment, TimeZone
 
 # Creates an infinite loop that catches SIGINT (Ctrl+C) for a clean exit
 AtThatMoment(TimeZone, zonehour=2)
+```
+
+## Working with Date & TodayDate
+
+```python
+from watchtime import Date, TodayDate
+
+# Date arithmetic (component-wise)
+# 24-15=09 days, 12-10=02 months, 2027-2026=0001 year
+print(Date(24, 12, 2027) - Date(15, 10, 2026))  # 09/02/01
+
+# Dynamic date generation
+print(TodayDate())  # 30/09/2026
+
+# Boolean comparisons
+d1 = Date(15, 10, 2026)
+d2 = Date(24, 12, 2027)
+
+print(d1 < d2)   # True
+print(d1 == Date(15, 10, 2026))  # True
+print(d2 >= d1)  # True
 ```
 
 ## License
