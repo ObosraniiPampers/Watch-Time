@@ -9,6 +9,7 @@ A Python library for working with time in digital clock format (HH:MM), managing
 - **Timezone Calculations**: Easy shift of current system time by specified hours and minutes.
 - **Live Console Player**: Built-in function (`AtThatMoment`) that refreshes the console every second to display live ticking time.
 - **Strict Type Checking**: Returns `NotImplemented` on type mismatches to ensure robust standard exception handling.
+- **Calendar Management (Date)**: Encapsulate, validate, and compare calendar dates (DD/MM/YYYY) with component-wise arithmetic
 
 ## Installation
 
