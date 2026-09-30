@@ -64,7 +64,7 @@ from watchtime import AtThatMoment, TimeZone
 AtThatMoment(TimeZone, zonehour=2)
 ```
 
-## Working with Date & TodayDate
+### Working with Date & TodayDate
 
 ```python
 from watchtime import Date, TodayDate
